@@ -50,7 +50,7 @@ SessionManagementScreen {
         text: lastUserName
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
+        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "用户名")
 
         onAccepted:
             if (root.loginScreenUiVisible) {
@@ -60,7 +60,7 @@ SessionManagementScreen {
 
     Input {
         id: passwordBox
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "密码")
         focus: !showUsernamePrompt || lastUserName
         echoMode: TextInput.Password
 
@@ -99,7 +99,7 @@ SessionManagementScreen {
     }
     Button {
         id: loginButton
-        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
+        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "登陆")
         enabled: passwordBox.text != ""
 
         Layout.topMargin: 20

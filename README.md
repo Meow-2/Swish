@@ -1,3 +1,5 @@
+## This is a fork of [icaho/Swish](https://github.com/icaho/Swish) and change English to Chinese
+
 # Swish
 
 ![preview](preview.png)

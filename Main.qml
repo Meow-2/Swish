@@ -152,7 +152,7 @@ PlasmaCore.ColorScope {
                 notificationMessage: {
                     var text = ""
                     if (keystateSource.data["Caps Lock"]["Locked"]) {
-                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel","Caps Lock is on")
+                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel","大写锁定已打开")
                         if (root.notificationMessage) {
                             text += " • "
                         }
@@ -164,28 +164,28 @@ PlasmaCore.ColorScope {
                 actionItems: [
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/suspend.svgz")
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")                        
+                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","睡眠")                        
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/restart.svgz")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","重启")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/shutdown.svgz")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","关机")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/change_user.svgz")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Different User")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","切换用户")
                         onClicked: mainStack.push(userPromptComponent)
                         enabled: true
                         visible: !userListComponent.showUsernamePrompt && !inputPanel.keyboardActive
@@ -332,7 +332,7 @@ PlasmaCore.ColorScope {
                     }
                     Component.onCompleted: {
                         // as we can't bind inside ListElement
-                        setProperty(0, "name", i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Type in Username and Password"));
+                        setProperty(0, "name", i18nd("plasma_lookandfeel_org.kde.lookandfeel", "输入用户名和密码"));
                     }
                 }
 
@@ -344,28 +344,28 @@ PlasmaCore.ColorScope {
                 actionItems: [
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/suspend.svgz")
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")                        
+                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","睡眠")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/restart.svgz")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","重启")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/shutdown.svgz")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","关机")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: "go-previous"
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","List Users")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","列出用户")
                         onClicked: mainStack.pop()
                         visible: !inputPanel.keyboardActive
                     }
@@ -422,7 +422,7 @@ PlasmaCore.ColorScope {
             }
 
             PlasmaComponents.ToolButton {
-                text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+                text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "虚拟键盘")
                 iconName: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
                 onClicked: inputPanel.showHide()
                 visible: inputPanel.status == Loader.Ready
@@ -440,7 +440,7 @@ PlasmaCore.ColorScope {
     Connections {
         target: sddm
         onLoginFailed: {
-            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed")
+            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "登陆失败")
         }
         onLoginSucceeded: {
             //note SDDM will kill the greeter at some random point after this
